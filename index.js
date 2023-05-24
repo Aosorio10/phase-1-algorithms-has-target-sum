@@ -1,13 +1,27 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let numSet = new Set();
+
+  for (let num of array) {
+    let complement = target - num;
+    if (numSet.has(complement)) {
+      return true;
+    }
+    numSet.add(num);
+  }
+
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+
 */
 
 /* 
-  Add your pseudocode here
+  * base on the function giving that takes in two arguments ( array, target)
+   then calculate the number by substracting the target
+   if number is found return "true"
+   else no numbers where fund return "false"
 */
 
 /*
